@@ -10,8 +10,8 @@ This module assumes following resources are already available:
 7. Gitlab Runner Token
 
 and it performs following actions:
-1. Create 2 gitlab runners
-2. Register runner with gitlab using gitlab url and token provider
+1. Create 2 Gitlab Runners
+2. Register Runners with Gitlab using Gitlab URL and Token
 
 Usage:
 ```
@@ -61,4 +61,4 @@ module gitlab_runner {
 
 | Name                              | Description                                   | 
 | ----------------------------------| ----------------------------------------------| 
-| instance_public_ip                | List of Gitlab Runner Instances' Public IP    | 
+| instance_public_ip                | List of Gitlab Runner Instance   Public IP    | 
