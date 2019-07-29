@@ -61,7 +61,7 @@ variable "gitlab_runner_token" {
 variable "gitlab_runner_tags" {
   type        = string
   description = "Gitlab Runner tag list (comma separated)."
-  default     = "specific,docker"
+  default     = ""
 }
 
 variable "gitlab_runner_docker_image" {
