@@ -17,7 +17,6 @@ data "aws_subnet" "public_selected" {
 data "template_file" "user_data" {
   template = "${file("${path.module}/templates/gitlab_runner_user_data.sh")}"
   vars = {
-    GITLAB_RUNNER_NAME                    = "${var.gitlab_runner_name}"
     GITLAB_RUNNER_URL                     = "${var.gitlab_runner_url}"
     GITLAB_RUNNER_TOKEN                   = "${var.gitlab_runner_token}"
     GITLAB_RUNNER_TAGS                    = "${var.gitlab_runner_tags}"
