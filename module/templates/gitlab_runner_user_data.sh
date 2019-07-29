@@ -27,8 +27,10 @@ sudo gitlab-runner register --non-interactive \
                        --name "${GITLAB_RUNNER_NAME}" \
                        --url "${GITLAB_RUNNER_URL}" \
                        --registration-token "${GITLAB_RUNNER_TOKEN}" \
-                       --executor docker \
+                       --executor "docker" \
                        --tag-list "${GITLAB_RUNNER_TAGS}" \
+                       --description "docker-runner" \
+                       --tag-list "docker,aws" \
                        --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}"
 
 # Start services
