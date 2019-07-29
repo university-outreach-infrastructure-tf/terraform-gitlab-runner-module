@@ -27,7 +27,6 @@ module gitlab_runner {
       gitlab_runner_url                    = var.gitlab_runner_url
       gitlab_runner_token                  = var.gitlab_runner_token
       gitlab_runner_tags                   = var.gitlab_runner_tags
-      gitlab_runner_docker_image           = var.gitlab_runner_docker_image
 }
 ```
 
@@ -46,7 +45,7 @@ module gitlab_runner {
 | gitlab_runner_url                    | URL for Runner setup                                                                                                                                  | `string`| ""                       | yes      |
 | gitlab_runner_token                  | Gitlab Runner registration token                                                                                                                      | `string`| ""                       | yes      |
 | gitlab_runner_tags                   | Gitlab Runner tag list (comma separated)                                                                                                              | `string`| ""                       | yes      |
-| gitlab_runner_docker_image           | Gitlab Runner default docker image.                                                                                                                   | `string`| `alpin:3.9`              | no       |
+| gitlab_runner_docker_image           | Gitlab Runner default docker image.                                                                                                                   | `string`| `alpine:3.9`             | no       |
 | gitlab_concurrent_job                | Number of Gitlab CI concurrent job to run                                                                                                             | `string`| `"4"`                    | no       |
 | gitlab_check_interval                | Gitlab CI check interval value                                                                                                                        | `string`| `"0"`                    | no       |
 | gitlab_rct_low_free_space            | Gitlab Runner Cleanup Tool - LOW_FREE_SPACE (When trigger the cache and image removal)"                                                               | `string`| `"1G"`                   | no       |

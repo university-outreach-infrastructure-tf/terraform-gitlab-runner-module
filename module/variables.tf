@@ -67,7 +67,7 @@ variable "gitlab_runner_tags" {
 variable "gitlab_runner_docker_image" {
   type        = string
   description = "Gitlab Runner default docker image."
-  default     = "alpin:3.9"
+  default     = "alpine:3.9"
 }
 variable "gitlab_concurrent_job" {
   type        = string

@@ -16,5 +16,4 @@ module gitlab_runner {
   gitlab_runner_url                    = var.gitlab_runner_url
   gitlab_runner_token                  = var.gitlab_runner_token
   gitlab_runner_tags                   = var.gitlab_runner_tags
-  gitlab_runner_docker_image           = var.gitlab_runner_docker_image
 }
