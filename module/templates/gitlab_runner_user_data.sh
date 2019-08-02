@@ -30,7 +30,8 @@ sudo gitlab-runner register --non-interactive \
                        --tag-list "${GITLAB_RUNNER_TAGS}" \
                        --run-untagged="true" \
                        --description "docker-runner" \
-                       --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}"
+                       --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}" \
+                       --docker-volumes /var/run/docker.sock:/var/run/docker.sock
 
 # Start services
 service docker start
