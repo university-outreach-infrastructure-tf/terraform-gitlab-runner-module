@@ -10,8 +10,9 @@ This module assumes following resources are already available:
 7. Gitlab Runner Token
 
 and it performs following actions:
-1. Create 2 Gitlab Runners
-2. Register Runners with Gitlab using Gitlab URL and Token
+1. Creates a number of Gitlab Runners
+2. Configures the runners to authenticate to a private docker registry
+3. Register Runners with Gitlab using Gitlab URL and Token
 
 Usage:
 ```
@@ -24,9 +25,12 @@ module gitlab_runner {
       stage                                = "test"
       attributes                           = ["xyz"]
       ssh_key_name                         = var.ssh_key_name
+      gitlab_runner_count                  = var.gitlab_runner_count
       gitlab_runner_url                    = var.gitlab_runner_url
       gitlab_runner_token                  = var.gitlab_runner_token
       gitlab_runner_tags                   = var.gitlab_runner_tags
+      gitlab_runner_docker_registry_url    = var.gitlab_runner_docker_registry_url
+      gitlab_runner_docker_registry_auth   = var.gitlab_runner_docker_registry_auth
 }
 ```
 
