@@ -1,5 +1,5 @@
 resource "aws_instance" "gitlab_runner" {
-  count                   = 2
+  count                   = var.gitlab_runner_count
   ami                     = var.amazon_linux_ami
   instance_type           = "t2.large"
   subnet_id               = data.aws_subnet.public_selected[count.index].id
