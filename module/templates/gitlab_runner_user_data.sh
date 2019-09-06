@@ -28,18 +28,12 @@ sudo gitlab-runner register --non-interactive \
       --url "${GITLAB_RUNNER_URL}" \
       --registration-token "${GITLAB_RUNNER_TOKEN}" \
       --executor "docker" \
+      --environment "[DOCKER_DRIVER=overlay]" \
       --tag-list "${GITLAB_RUNNER_TAGS}" \
       --run-untagged="true" \
       --description "docker-runner" \
       --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}" \
       --docker-volumes /var/run/docker.sock:/var/run/docker.sock
-                       --url "${GITLAB_RUNNER_URL}" \
-                       --registration-token "${GITLAB_RUNNER_TOKEN}" \
-                       --executor "docker" \
-                       --environment "[DOCKER_DRIVER=overlay]" \
-                       --tag-list "${GITLAB_RUNNER_TAGS}" \
-                       --description "docker-runner" \
-                       --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}"
 
 # Start services
 service docker start

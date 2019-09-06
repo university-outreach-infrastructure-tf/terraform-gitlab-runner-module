@@ -58,12 +58,6 @@ variable "root_ebs_size" {
   default     = 32
 }
 
-variable "gitlab_runner_count"{
-  type        = number
-  description = "How many runners you want?"
-  default     = 2
-}
-
 variable "gitlab_runner_url" {
   type        = string
   description = "Gitlab CI coordinator URL."
