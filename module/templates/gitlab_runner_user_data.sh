@@ -17,10 +17,10 @@ sudo chkconfig gitlab-runner on
 # Add gitlab-runner config
 mkdir -p /etc/gitlab-runner
 cat > /etc/gitlab-runner/config.toml <<- EOM
-concurrent = ${GITLAB_CONCURRENT_JOB}
+concurrent     = ${GITLAB_CONCURRENT_JOB}
 check_interval = ${GITLAB_CHECK_INTERVAL}
+environment    = ["DOCKER_DRIVER=overlay2"]
 EOM
-
 
 # Register gitlab runner
 sudo gitlab-runner register --non-interactive \
@@ -28,7 +28,6 @@ sudo gitlab-runner register --non-interactive \
       --url "${GITLAB_RUNNER_URL}" \
       --registration-token "${GITLAB_RUNNER_TOKEN}" \
       --executor "docker" \
-      --environment "[DOCKER_DRIVER=overlay]" \
       --tag-list "${GITLAB_RUNNER_TAGS}" \
       --run-untagged="true" \
       --description "docker-runner" \
@@ -38,7 +37,6 @@ sudo gitlab-runner register --non-interactive \
 # Start services
 service docker start
 service gitlab-runner start
-
 
 # Launch Gitlab Runner Cleanup Tool
 docker run -d \
