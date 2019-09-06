@@ -56,12 +56,6 @@ module gitlab_runner {
 | gitlab_runner_docker_registry_auth   | Base64 encoded basic auth credentials for the private registry (`echo -n "my_username:my_password" | base64`).                                        | `string`| ""                       | no       |
 | gitlab_concurrent_job                | Number of Gitlab CI concurrent job to run                                                                                                             | `string`| `"4"`                    | no       |
 | gitlab_check_interval                | Gitlab CI check interval value                                                                                                                        | `string`| `"0"`                    | no       |
-| gitlab_rct_low_free_space            | Gitlab Runner Cleanup Tool - LOW_FREE_SPACE (When trigger the cache and image removal)"                                                               | `string`| `"8G"`                   | no       |
-| gitlab_rct_expected_free_space       | Gitlab Runner Cleanup Tool - EXPECTED_FREE_SPACE (How much the free space to cleanup)                                                                 | `string`| `"10G"`                  | no       |
-| gitlab_rct_low_free_files_count      | Gitlab Runner Cleanup Tool - LOW_FREE_FILES_COUNT (When the number of free files (i-nodes) runs below this value trigger the cache and image removal) | `string`| `"1048576"`              | no       |
-| gitlab_rct_expected_free_files_count | Gitlab Runner Cleanup Tool - EXPECTED_FREE_FILES_COUNT (How many free files (i-nodes) to cleanup)"                                                    | `string`| `"1572864"`              | no       |
-| gitlab_rct_default_ttl               | Gitlab Runner Cleanup Tool - DEFAULT_TTL (Minimum time to preserve a newly downloaded images or created caches)"                                      | `string`| `"1m"`                   | no       |
-| gitlab_rct_use_df                    | Gitlab Runner Cleanup Tool - USE_DF (Use a command line df tool to check disk space)                                                                  | `string`| `"1"`                    | no       |
 | amazon_linux_ami                     | AMI for AWS EC2 instance resources.                                                                                                                   | `string`| `"ami-0ff8a91507f77f867"`| no       |
 
 ## OUTPUT VALUE NAMES

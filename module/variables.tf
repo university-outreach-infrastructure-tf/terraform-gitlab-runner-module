@@ -105,37 +105,6 @@ variable "gitlab_check_interval" {
   default     = "0"
 }
 
-variable "gitlab_rct_low_free_space" {
-  type        = string
-  description = "Gitlab Runner Cleanup Tool - LOW_FREE_SPACE (When trigger the cache and image removal)"
-  default     = "8G"
-}
-variable "gitlab_rct_expected_free_space" {
-  type        = string
-  description = "Gitlab Runner Cleanup Tool - EXPECTED_FREE_SPACE (How much the free space to cleanup)"
-  default     = "10G"
-}
-variable "gitlab_rct_low_free_files_count" {
-  type        = string
-  description = "Gitlab Runner Cleanup Tool - LOW_FREE_FILES_COUNT (When the number of free files (i-nodes) runs below this value trigger the cache and image removal)"
-  default     = "1048576"
-}
-variable "gitlab_rct_expected_free_files_count" {
-  type        = string
-  description = "Gitlab Runner Cleanup Tool - EXPECTED_FREE_FILES_COUNT (How many free files (i-nodes) to cleanup)"
-  default     = "1572864"
-}
-variable "gitlab_rct_default_ttl" {
-  type        = string
-  description = "Gitlab Runner Cleanup Tool - DEFAULT_TTL (Minimum time to preserve a newly downloaded images or created caches)"
-  default     = "1m"
-}
-variable "gitlab_rct_use_df" {
-  type        = string
-  description = "Gitlab Runner Cleanup Tool - USE_DF (Use a command line df tool to check disk space)"
-  default     = "1"
-}
-
 variable "amazon_linux_ami" {
   type        = string
   description = "AMI for AWS EC2 instance resources."
