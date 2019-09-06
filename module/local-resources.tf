@@ -21,6 +21,8 @@ data "template_file" "user_data" {
     GITLAB_RUNNER_TOKEN                   = "${var.gitlab_runner_token}"
     GITLAB_RUNNER_TAGS                    = "${var.gitlab_runner_tags}"
     GITLAB_RUNNER_DOCKER_IMAGE            = "${var.gitlab_runner_docker_image}"
+    DOCKER_REGISTRY_URL                   = "${var.gitlab_runner_docker_registry_url}"
+    DOCKER_REGISTRY_AUTH                  = "${var.gitlab_runner_docker_registry_auth}"
     GITLAB_CONCURRENT_JOB                 = "${var.gitlab_concurrent_job}"
     GITLAB_CHECK_INTERVAL                 = "${var.gitlab_check_interval}"
     GITLAB_RCT_LOW_FREE_SPACE             = "${var.gitlab_rct_low_free_space}"

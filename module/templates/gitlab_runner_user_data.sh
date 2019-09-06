@@ -24,6 +24,15 @@ EOM
 
 # Register gitlab runner
 sudo gitlab-runner register --non-interactive \
+      --env "DOCKER_AUTH_CONFIG={\"auths\":{\"${DOCKER_REGISTRY_URL}\":{\"auth\":\"${DOCKER_REGISTRY_AUTH}\"}}}" \
+      --url "${GITLAB_RUNNER_URL}" \
+      --registration-token "${GITLAB_RUNNER_TOKEN}" \
+      --executor "docker" \
+      --tag-list "${GITLAB_RUNNER_TAGS}" \
+      --run-untagged="true" \
+      --description "docker-runner" \
+      --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}" \
+      --docker-volumes /var/run/docker.sock:/var/run/docker.sock
                        --url "${GITLAB_RUNNER_URL}" \
                        --registration-token "${GITLAB_RUNNER_TOKEN}" \
                        --executor "docker" \

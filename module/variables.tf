@@ -46,6 +46,12 @@ variable "name" {
   default     = ""
 }
 
+variable "gitlab_runner_count" {
+  type        = number
+  description = "The number of runners to create."
+  default     = 2
+}
+
 variable "root_ebs_size" {
   type        = number
   description = "Size of EBS volume attached to gitab runner"
@@ -73,7 +79,7 @@ variable "gitlab_runner_token" {
 variable "gitlab_runner_tags" {
   type        = string
   description = "Gitlab Runner tag list (comma separated)."
-  default     = "specific,docker"
+  default     = ""
 }
 
 variable "gitlab_runner_docker_image" {
@@ -81,6 +87,19 @@ variable "gitlab_runner_docker_image" {
   description = "Gitlab Runner default docker image."
   default     = "alpine:3.9"
 }
+
+variable "gitlab_runner_docker_registry_url" {
+  type        = string
+  description = "URL to your private docker registry."
+  default     = ""
+}
+
+variable "gitlab_runner_docker_registry_auth" {
+  type        = string
+  description = "Base64 encoded basic authentication credentials."
+  default     = ""
+}
+
 variable "gitlab_concurrent_job" {
   type        = string
   description = "Number of Gitlab CI concurrent job to run."

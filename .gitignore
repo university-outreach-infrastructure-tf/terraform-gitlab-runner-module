@@ -7,3 +7,7 @@
 *.tfstate
 *.tfstate.backup
 */terraform.tfvars
+*/.terraform
+
+# Secrets
+*.pem
