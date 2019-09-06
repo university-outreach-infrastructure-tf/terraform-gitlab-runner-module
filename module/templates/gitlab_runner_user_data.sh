@@ -27,6 +27,7 @@ sudo gitlab-runner register --non-interactive \
                        --url "${GITLAB_RUNNER_URL}" \
                        --registration-token "${GITLAB_RUNNER_TOKEN}" \
                        --executor "docker" \
+                       --environment "[DOCKER_DRIVER=overlay]" \
                        --tag-list "${GITLAB_RUNNER_TAGS}" \
                        --description "docker-runner" \
                        --docker-image "${GITLAB_RUNNER_DOCKER_IMAGE}"

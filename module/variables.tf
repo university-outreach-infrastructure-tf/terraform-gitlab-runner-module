@@ -46,6 +46,18 @@ variable "name" {
   default     = ""
 }
 
+variable "root_ebs_size" {
+  type        = number
+  description = "Size of EBS volume attached to gitab runner"
+  default     = 32
+}
+
+variable "gitlab_runner_count"{
+  type        = number
+  description = "How many runners you want?"
+  default     = 2
+}
+
 variable "gitlab_runner_url" {
   type        = string
   description = "Gitlab CI coordinator URL."
@@ -83,22 +95,22 @@ variable "gitlab_check_interval" {
 variable "gitlab_rct_low_free_space" {
   type        = string
   description = "Gitlab Runner Cleanup Tool - LOW_FREE_SPACE (When trigger the cache and image removal)"
-  default     = "1G"
+  default     = "8G"
 }
 variable "gitlab_rct_expected_free_space" {
   type        = string
   description = "Gitlab Runner Cleanup Tool - EXPECTED_FREE_SPACE (How much the free space to cleanup)"
-  default     = "2G"
+  default     = "10G"
 }
 variable "gitlab_rct_low_free_files_count" {
   type        = string
   description = "Gitlab Runner Cleanup Tool - LOW_FREE_FILES_COUNT (When the number of free files (i-nodes) runs below this value trigger the cache and image removal)"
-  default     = "131072"
+  default     = "1048576"
 }
 variable "gitlab_rct_expected_free_files_count" {
   type        = string
   description = "Gitlab Runner Cleanup Tool - EXPECTED_FREE_FILES_COUNT (How many free files (i-nodes) to cleanup)"
-  default     = "262144"
+  default     = "1572864"
 }
 variable "gitlab_rct_default_ttl" {
   type        = string
