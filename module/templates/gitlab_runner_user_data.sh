@@ -23,7 +23,7 @@ EOM
 
 # Register gitlab runner
 sudo gitlab-runner register --non-interactive \
-      --env "DOCKER_AUTH_CONFIG={\"auths\":{\"${DOCKER_REGISTRY_URL}\":{\"auth\":\"${DOCKER_REGISTRY_AUTH}\"}}}"
+      --env "DOCKER_AUTH_CONFIG={\"auths\":{\"${DOCKER_REGISTRY_URL}\":{\"auth\":\"${DOCKER_REGISTRY_AUTH}\"}}}" \
       --env "DOCKER_DRIVER=overlay2" \
       --url "${GITLAB_RUNNER_URL}" \
       --registration-token "${GITLAB_RUNNER_TOKEN}" \
