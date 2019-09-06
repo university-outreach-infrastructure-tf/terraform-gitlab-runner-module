@@ -19,7 +19,7 @@ mkdir -p /etc/gitlab-runner
 cat > /etc/gitlab-runner/config.toml <<- EOM
 concurrent     = ${GITLAB_CONCURRENT_JOB}
 check_interval = ${GITLAB_CHECK_INTERVAL}
-environment    = ["DOCKER_DRIVER=overlay2"]
+environment    = ["DOCKER_DRIVER=overlay"]
 EOM
 
 # Register gitlab runner
