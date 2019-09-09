@@ -38,15 +38,5 @@ sudo gitlab-runner register --non-interactive \
 service docker start
 service gitlab-runner start
 
-# Launch Gitlab Runner Cleanup Tool
-docker run -d \
-      -e LOW_FREE_SPACE=${GITLAB_RCT_LOW_FREE_SPACE} \
-      -e EXPECTED_FREE_SPACE=${GITLAB_RCT_EXPECTED_FREE_SPACE} \
-      -e LOW_FREE_FILES_COUNT=${GITLAB_RCT_LOW_FREE_FILES_COUNT} \
-      -e EXPECTED_FREE_FILES_COUNT=${GITLAB_RCT_EXPECTED_FREE_FILES_COUNT} \
-      -e DEFAULT_TTL=${GITLAB_RCT_DEFAULT_TTL} \
-      -e USE_DF=${GITLAB_RCT_USE_DF} \
-      --restart always \
-      -v /var/run/docker.sock:/var/run/docker.sock \
-      --name=gitlab-runner-docker-cleanup \
-      quay.io/gitlab/gitlab-runner-docker-cleanup
+# Docker system cleanup every 24 hrs to free up space on
+echo "0 2 * * * /usr/bin/docker system prune -a -f --filter "until=24h"" >>  /etc/cron.d/docker_cleanup

@@ -25,11 +25,5 @@ data "template_file" "user_data" {
     DOCKER_REGISTRY_AUTH                  = "${var.gitlab_runner_docker_registry_auth}"
     GITLAB_CONCURRENT_JOB                 = "${var.gitlab_concurrent_job}"
     GITLAB_CHECK_INTERVAL                 = "${var.gitlab_check_interval}"
-    GITLAB_RCT_LOW_FREE_SPACE             = "${var.gitlab_rct_low_free_space}"
-    GITLAB_RCT_EXPECTED_FREE_SPACE        = "${var.gitlab_rct_expected_free_space}"
-    GITLAB_RCT_LOW_FREE_FILES_COUNT       = "${var.gitlab_rct_low_free_files_count}"
-    GITLAB_RCT_EXPECTED_FREE_FILES_COUNT  = "${var.gitlab_rct_expected_free_files_count}"
-    GITLAB_RCT_DEFAULT_TTL                = "${var.gitlab_rct_default_ttl}"
-    GITLAB_RCT_USE_DF                     = "${var.gitlab_rct_use_df}"
   }
 }
